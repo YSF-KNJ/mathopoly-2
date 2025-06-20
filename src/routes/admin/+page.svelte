@@ -70,6 +70,21 @@
     message = "✅ Données enregistrées avec succès !";
     error = false;
   }
+
+  function downloadCSV() {
+    let csv = "Player,Number,Letter\n";
+    keysX.forEach((k) => (csv += `X,${k.num},${k.char}\n`));
+    keysY.forEach((k) => (csv += `Y,${k.num},${k.char}\n`));
+    keysZ.forEach((k) => (csv += `Z,${k.num},${k.char}\n`));
+
+    const blob = new Blob([csv], { type: "text/csv" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "mathopoly-keys.csv";
+    link.click();
+    URL.revokeObjectURL(url);
+  }
 </script>
 
 <div class="admin-container">
@@ -119,6 +134,10 @@
       ✨ Donne ce code au joueur gagnant pour décrypter le mot secret !
     </p>
   {/if}
+
+  <div class="btns">
+    <button on:click={downloadCSV}>⬇️ Télécharger les clés (CSV)</button>
+  </div>
 </div>
 
 <style>
@@ -129,7 +148,7 @@
     background: #fdfdfd;
     border-radius: 10px;
   }
-  
+
   input {
     margin: 6px;
     padding: 6px;
