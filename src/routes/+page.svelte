@@ -28,11 +28,11 @@
     <p class="author">Réalisé par:</p>
     <ul class="group">
         <li>• Kanjaa Youssef</li>
+        <li>• Belkadi Soukaina</li>
         <li>• Oulad Moussa Sara</li>  
-        <li>• Hamodan Samya</li>
-        <li>• Errboun Mariam</li>
+        <li>• Hamoudan Samia</li>
+        <li>• Erraboun Mariam</li>
     </ul>
-    <!-- Encadrer par : Prof. Hamdane Karima-->
     <p class="author">Encadré par : Prof. Hamdane Karima</p>
 
 
