@@ -7,6 +7,33 @@
 
   const letters = shuffledAlphabet();
 
+  const defaultQuestions = [
+    "GO",
+    "10",
+    "12",
+    "A",
+    "15",
+    "4",
+    "5",
+    "19",
+    "13",
+    "18",
+    "6",
+    "21",
+    "9",
+    "16",
+    "2",
+    "B",
+    "20",
+    "7",
+    "1",
+    "17",
+    "3",
+    "11",
+    "8",
+    "14",
+  ];
+
   let questions = Array(24).fill("");
   let solution = "";
 
@@ -36,6 +63,11 @@
   let error = false;
 
   function saveGameData() {
+    // Fill empty questions with default ones
+    questions = questions.map((q, i) =>
+      q.trim() === "" ? defaultQuestions[i] : q,
+    );
+
     if (!solution.trim()) {
       message = "❌ Veuillez saisir un mot secret.";
       error = true;
